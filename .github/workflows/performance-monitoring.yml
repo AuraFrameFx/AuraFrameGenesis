@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: 🏠 Checkout Genesis Protocol
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: ☕ Setup Java (AGP 9.0.0 Auto-Detection)
       uses: actions/setup-java@v4
