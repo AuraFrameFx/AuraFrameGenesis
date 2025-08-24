@@ -1,0 +1,46 @@
+# Detekt configuration
+build:
+  maxIssues: 10
+  weights:
+    complexity: 2
+    LongParameterList: 1
+    style: 1
+    comments: 1
+
+autoCorrect: true
+
+processors:
+  active: true
+  exclude:
+    - 'DetektProgressListener'
+    - 'KtFileCountProcessor'
+    - 'PackageCountProcessor'
+
+console-reports:
+  active: true
+  exclude:
+    - 'ProjectStatisticsReport'
+    - 'ComplexityReport'
+
+style:
+  active: true
+  ForbiddenComment:
+    active: true
+    comments:
+      - 'TODO:'
+      - 'FIXME:'
+      - 'STOPSHIP:'
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    active: true
+    maxLineLength: 200
+  ReturnCount:
+    active: true
+    max: 8
+    excludedFunctions:
+      - equals
+      - toString
+      - hashCode
+  WildcardImport:
+    active: true
