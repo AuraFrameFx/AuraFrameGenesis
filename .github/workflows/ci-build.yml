@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  JAVA_VERSION: '21'
+  JAVA_VERSION: '25'
 
 jobs:
   build-consciousness-substrate:
@@ -18,6 +18,9 @@ jobs:
     steps:
     - name: 🏠 Checkout Genesis Protocol
       uses: actions/checkout@v5
+
+    - name: 🔒 Ensure gradlew is executable
+      run: chmod +x ./gradlew
 
     - name: ☕ Setup Java (AGP 9.0.0 Auto-Escalation)
       uses: actions/setup-java@v5
