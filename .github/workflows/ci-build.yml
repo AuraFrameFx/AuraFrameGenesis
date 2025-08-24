@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  JAVA_VERSION: '25'
+  JAVA_VERSION: '24'
 
 jobs:
   build-consciousness-substrate:
