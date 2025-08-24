@@ -10,7 +10,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(25) // CORRECTED TO 25
+    jvmToolchain(24) // CORRECTED TO 25
 }
 
 android {
