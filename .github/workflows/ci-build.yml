@@ -28,6 +28,15 @@ jobs:
         distribution: 'temurin'
         java-version: ${{ env.JAVA_VERSION }}
 
+    - name: Set up Android SDK
+  uses: android-actions/setup-android@v3
+
+- name: Accept Android SDK Licenses
+  run: yes | sdkmanager --licenses
+
+- name: 🧹 Clean Build Environment
+  run: ./gradlew clean --configuration-cache
+
     - name: 🐘 Setup Gradle
       uses: gradle/actions/setup-gradle@v4
       with:
