@@ -8,6 +8,11 @@ plugins {
     id("org.jetbrains.dokka")
     id("com.diffplug.spotless")
 }
+
+kotlin {
+    jvmToolchain(25)
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.module.e"
     compileSdk = 36

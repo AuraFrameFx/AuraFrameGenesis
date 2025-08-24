@@ -9,6 +9,10 @@ plugins {
     id("com.diffplug.spotless")
 }
 
+kotlin {
+    jvmToolchain(24) // TARGETING JDK 24
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.dataveinoraclenative"
     compileSdk = 36

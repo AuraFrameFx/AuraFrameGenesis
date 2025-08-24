@@ -9,6 +9,10 @@ plugins {
     id("com.diffplug.spotless")
 }
 
+kotlin {
+    jvmToolchain(25) // CORRECTED TO 25
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.colorblendr"
     compileSdk = 36

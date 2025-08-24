@@ -9,6 +9,10 @@ plugins {
     id("com.diffplug.spotless")
 }
 
+kotlin {
+    jvmToolchain(24) // TARGETING JDK 24
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.collabcanvas"
     compileSdk = 36
@@ -17,7 +21,7 @@ android {
         minSdk = 33
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        
+
         // NDK configuration for collaborative AI processing
         ndk {
             abiFilters.addAll(listOf("arm64-v8a", "armeabi-v7a", "x86_64"))

@@ -9,6 +9,10 @@ plugins {
     id("com.diffplug.spotless")
 }
 
+kotlin {
+    jvmToolchain(24)
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.module.a"
     compileSdk = 36

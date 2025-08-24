@@ -10,7 +10,7 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 pluginManagement {
     repositories {
         google()                    // FIRST - Google for Android plugins
-        gradlePluginPortal()        // SECOND - Gradle official plugins  
+        gradlePluginPortal()        // SECOND - Gradle official plugins
         mavenCentral()              // THIRD - Maven Central
         maven("https://androidx.dev/storage/compose-compiler/repository/") {
             name = "AndroidXDev"

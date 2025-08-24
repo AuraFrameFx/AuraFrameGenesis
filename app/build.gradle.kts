@@ -12,6 +12,10 @@ plugins {
     id("org.openapi.generator") version "7.14.0"
 }
 
+kotlin {
+    jvmToolchain(24) // TARGETING JDK 24
+}
+
 android {
     namespace = "dev.aurakai.auraframefx"
     compileSdk = 36
@@ -383,4 +387,5 @@ android {
         androidTestImplementation(libs.hilt.android.testing)
         kspAndroidTest(libs.hilt.compiler)
     }
+
 

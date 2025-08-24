@@ -10,6 +10,10 @@ plugins {
     alias(libs.plugins.spotless)
 }
 
+kotlin {
+    jvmToolchain(24)
+}
+
 android {
     // FIX: Valid namespace without hyphens
     namespace = "dev.aurakai.auraframefx.featuremodule"

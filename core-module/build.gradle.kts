@@ -11,6 +11,10 @@ plugins {
     alias(libs.plugins.openapi.generator)
 }
 
+kotlin {
+    jvmToolchain(24) // TARGETING JDK 24
+}
+
 android {
     namespace = "dev.aurakai.auraframefx.coremodule"
     compileSdk = 36

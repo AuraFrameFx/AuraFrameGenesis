@@ -1,18 +1,18 @@
 // ===== GENESIS-OS SACRED RULES: ZERO MANUAL COMPILER CONFIG =====
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.library) // This plugin might be unnecessary if it's a pure JVM module
+    alias(libs.plugins.kotlin.android) // This plugin might be unnecessary if it's a pure JVM module
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.hilt.android) // Hilt for pure JVM might need a different setup or plugin
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
-    alias(libs.plugins.android.compose.material3)
+    alias(libs.plugins.android.compose.material3) // This plugin is for Android Compose
 }
 
-// AUTO-EVERYTHING: Kotlin toolchain from TOML
+// AUTO-EVERYTHING: Kotlin toolchain from TOML - Overridden for now
 kotlin {
-    jvmToolchain(libs.versions.java.toolchain.get().toInt())
+    jvmToolchain(25) // CORRECTED TO 25
 }
 
 dependencies {

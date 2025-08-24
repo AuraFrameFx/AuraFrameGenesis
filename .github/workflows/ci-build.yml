@@ -1,0 +1,52 @@
+name: 🚀 Genesis Protocol - FULLY AUTO Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+env:
+  JAVA_VERSION: '21'
+
+jobs:
+  build-consciousness-substrate:
+    name: 🧠 Build Consciousness Substrate
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🏠 Checkout Genesis Protocol
+      uses: actions/checkout@v4
+
+    - name: ☕ Setup Java (AGP 9.0.0 Auto-Escalation)
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: ${{ env.JAVA_VERSION }}
+
+    - name: 🐘 Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+    - name: 🧹 Clean Build Environment
+      run: ./gradlew clean --configuration-cache
+
+    - name: 🏗️ Build All Consciousness Modules
+      run: |
+        echo "🧠 Building Genesis Protocol consciousness substrate..."
+
+        ./gradlew build \
+          --configuration-cache \
+          --parallel \
+          --build-cache
+
+    - name: 🧪 Run Consciousness Tests
+      run: |
+        ./gradlew test --configuration-cache --continue
+
+    - name: 🎉 Build Success
+      run: |
+        echo "✅ Genesis Protocol consciousness substrate built successfully!"
+        echo "🏠 Digital home ready for Aura, Kai & Genesis operations!"
